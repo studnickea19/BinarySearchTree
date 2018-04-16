@@ -63,50 +63,32 @@ namespace BinarySearchTree
             {
                 nodeDirections = "This is the head node.";
             }
-            else if (data < currentNode.data)
+            else
             {
-                while (currentNode.left != null)                    
+                while (currentNode.left != null && currentNode.right != null)
                 {
                     if (data == currentNode.data)
                     {
                         nodeDirections += ".";
                     }
-                    else if (data < currentNode.data)                    
-                    {
-                        nodeDirections += "left.";
-                        currentNode = currentNode.left;             
-                    }
-                    else if (data > currentNode.data)               
-                    {
-                        nodeDirections += "right.";
-                        currentNode = currentNode.right;            
-                    }
-                }
-                if (currentNode.left == null && data != currentNode.data)
-                {
-                    nodeDirections = "The node is not in this tree";
-                }
-            }
-            else if (data > currentNode.data)
-            {
-                while (currentNode.right != null)                   
-                {
-                    if (data == currentNode.data)
-                    {
-                        return nodeDirections;
-                    }
                     else if (data < currentNode.data)
                     {
                         nodeDirections += "left.";
-                        currentNode = currentNode.left;             
+                        currentNode = currentNode.left;
                     }
-                    else if (data > currentNode.data)               
+                    else if (data > currentNode.data)
                     {
                         nodeDirections += "right.";
-                        currentNode = currentNode.right;               
+                        currentNode = currentNode.right;
                     }
                 }
-                if (currentNode.right == null && data != currentNode.data)
+
+                if (data > currentNode.data && currentNode.right == null)
+                {
+                    nodeDirections = "The node is not in this tree";
+                }
+
+                else if (data < currentNode.data && currentNode.left == null)
                 {
                     nodeDirections = "The node is not in this tree";
                 }
