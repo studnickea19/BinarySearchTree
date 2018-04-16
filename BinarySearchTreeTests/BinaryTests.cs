@@ -81,5 +81,64 @@ namespace BinarySearchTreeTests
             Assert.AreEqual(expected, actual);
         }
 
+        [TestMethod]
+        public void Search_NodeDirections_AreCorrectForHeadNode()
+        {
+            //Arrange
+            BinaryTree newTree = new BinaryTree();
+            newTree.Add(32);
+            newTree.Add(16);
+            newTree.Add(64);
+            newTree.Add(8);
+            newTree.Add(24);
+            newTree.Add(42);
+            string expected = "This is the head node.";
+            string actual;
+            //Act
+            actual = newTree.Search(32);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Search_NodeDirections_AreCorrectForNoNode()
+        {
+            //Arrange
+            BinaryTree newTree = new BinaryTree();
+            newTree.Add(32);
+            newTree.Add(16);
+            newTree.Add(64);
+            newTree.Add(8);
+            newTree.Add(24);
+            newTree.Add(42);
+            string expected = "The node is not in this tree";
+            string actual;
+            //Act
+            actual = newTree.Search(82);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Search_NodeDirections_AreCorrect()
+        {
+            //Arrange
+            BinaryTree newTree = new BinaryTree();
+            newTree.Add(32);
+            newTree.Add(16);
+            newTree.Add(64);
+            newTree.Add(8);
+            newTree.Add(24);
+            newTree.Add(42);
+            string expected = "The node location is: right.left.!!!";
+            string actual;
+            //Act
+            actual = newTree.Search(42);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

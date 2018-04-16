@@ -67,11 +67,7 @@ namespace BinarySearchTree
             {
                 while (currentNode.left != null && currentNode.right != null)
                 {
-                    if (data == currentNode.data)
-                    {
-                        nodeDirections += ".";
-                    }
-                    else if (data < currentNode.data)
+                    if (data < currentNode.data)
                     {
                         nodeDirections += "left.";
                         currentNode = currentNode.left;
@@ -83,7 +79,11 @@ namespace BinarySearchTree
                     }
                 }
 
-                if (data > currentNode.data && currentNode.right == null)
+                if(data == currentNode.data)
+                {
+                    return nodeDirections;
+                }
+                else if (data > currentNode.data && currentNode.right == null)
                 {
                     nodeDirections = "The node is not in this tree";
                 }
