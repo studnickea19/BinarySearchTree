@@ -23,7 +23,5 @@ namespace BinarySearchTree
             this.data = data;
         }
 
-        //MEMBER METHODS
-
     }
 }

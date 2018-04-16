@@ -7,5 +7,6 @@
 
   <ItemGroup>
     <Compile Remove="LinkedList.cs" />
+    <Compile Remove="Tree.cs" />
   </ItemGroup>
 </Project>
